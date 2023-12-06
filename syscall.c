@@ -71,9 +71,9 @@ int main() {
                 pid_t pid;
                 printf("Hello\n");
                 pid = fork();
-                if (pid > 0) {
+                if (pid == 0) {
                     printf("Child process ID is %d\n", pid);
-                } else if (pid == 0) {
+                } else if (pid > 0) {
                     printf("Parent process ID is %d\n", getppid());
                 } else {
                     perror("fork");
